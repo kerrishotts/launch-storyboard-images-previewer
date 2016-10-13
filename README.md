@@ -57,3 +57,5 @@ The device preview pane shows all supported devices in their possible orientatio
 * Images are downsampled to fit within the previews, and as such, you should not rely on them for pixel-perfect rendering. Depending on your browser and system configuration, the images may be somewhat pixelated or blurry.
 
 * iOS is supposed to select the image that best fits the device. This utility attempts to duplicate that algorithm, but it may be flawed in that it is limited by my own knowledge of how iOS does it. As such, it is possible that there are some edge cases that I haven't considered.
+
+* The coding here is incredibly naive. It makes no attempt to be optimized for any particular form factor, doesn't provide accessibility, and may not run well on your machine (lots of downscaling going on!). Ideally that will change in the future, but for now, consider this "proof of concept" quality.
