@@ -22,7 +22,7 @@ This utility has been tested on:
 
 ## Installation
 
-* Run from `rawgit.com`: https://rawgit.com/kerrishotts/launch-storyboard-images-previewer/master/index.html
+* Run from `rawgit.com`: https://cdn.rawgit.com/kerrishotts/launch-storyboard-images-previewer/master/index.html
 
 * Clone this repo, and:
 
