@@ -77,6 +77,7 @@
                 let fileReader = new FileReader();
                 fileReader.onload = function () {
                     sibling.src = fileReader.result;
+                    sibling.parentElement.parentElement.setAttribute("data-has-image", "yes");
                     updatePreviewsFromImages();
                 }
                 fileReader.readAsDataURL(target.files[0]);
@@ -127,8 +128,8 @@
        
         let imgContainer = document.createElement("div");
         imgContainer.className = `imgContainer ${device.multitasking <= 0.5 ? "right" : (device.multitasking ? "left" : "full")}`;
-        imgContainer.style.width = `${w}px`;
-        imgContainer.style.height = `${h}px`;
+        imgContainer.style.width = `${w + 10}px`;
+        imgContainer.style.height = `${h + 10}px`;
 
         let img = document.createElement("img");
         img.style.width = `${mw}px`;
@@ -137,10 +138,11 @@
         let sourceImage = queryStrings.reduce((p, c) => {
             console.log(c);
             let el = document.querySelector(c);
+            let parentEl = document.querySelector(c.replace("com", "any"));
             if (p) {
                 return p;
             } else {
-                if (el && el.src) {
+                if (parentEl && parentEl.src && el && el.src) {
                     return el;
                 } else {
                     return p;

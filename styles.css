@@ -77,11 +77,15 @@ article > section {
     text-align: center;
 }
 
+.idiom .scale .size.anyany:not([data-has-image=yes]) ~ .size {
+    opacity: 0.5;
+}
+
 .idiom .scale .size .imgContainer {
     background-color: white;
     background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAACpJREFUGBljPHPmzH8GJGBiYsKIxGVgQuZgY1OuAMU+kBXobqLcCoImAACVVwdy5DoSvwAAAABJRU5ErkJggg==);
     
-    border: 1px dashed #888;
+    border: 1px dashed #888C8F;
     margin: auto auto;
     width: 64px;
     height: 64px;
