@@ -1,8 +1,12 @@
 # Launch Storyboard Image Previewer Utility
 
 > Author: Kerri Shotts (kerrishotts@gmail.com)
+>
 > Version: 0.1
+>
 > License: MIT
+
+[Run it now](https://cdn.rawgit.com/kerrishotts/launch-storyboard-images-previewer/master/index.html) -- for the impatient... ;-) Do read the docs before using, though.
 
 This utility is intended to be used in conjunction with the new launch storyboard images feature released with `cordova-ios@4.3.0`. This utility provides a simple and fast way to preview your images on all supported iOS devices, which means you can quickly verify that your images appear correctly centered and that no important detail is lost due to cropping.
 
