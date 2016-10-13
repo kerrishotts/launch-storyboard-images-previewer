@@ -73,6 +73,7 @@
         el.addEventListener("change", (evt) => {
             let target = evt.target || window.event.srcElement;
             let sibling = target.previousSibling.firstChild;
+            // modified from http://stackoverflow.com/a/3814285
             if (FileReader && target.files && target.files.length) {
                 let fileReader = new FileReader();
                 fileReader.onload = function () {
