@@ -22,6 +22,7 @@ article {
 article > section {
     flex: 1 1 100%;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 .images {
@@ -151,7 +152,9 @@ article > section {
     border: 1px solid #383C3F;
 }
 
-.previews .device p {
+.previews .device > p {
     font-size: 0.75rem;
     color: #383C3F;
+    margin: 0.33rem 0;
+    text-align: center;
 }
