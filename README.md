@@ -6,7 +6,7 @@
 >
 > License: MIT
 
-[Run it now](https://cdn.rawgit.com/kerrishotts/launch-storyboard-images-previewer/master/index.html) -- for the impatient... ;-) Do read the docs before using, though.
+[Run it now](https://cdn.rawgit.com/kerrishotts/launch-storyboard-images-previewer/0.1-release/index.html) -- for the impatient... ;-) Do read the docs before using, though.
 
 This utility is intended to be used in conjunction with the new launch storyboard images feature released with `cordova-ios@4.3.0`. This utility provides a simple and fast way to preview your images on all supported iOS devices, which means you can quickly verify that your images appear correctly centered and that no important detail is lost due to cropping.
 
@@ -26,7 +26,7 @@ This utility has been tested on:
 
 ## Installation
 
-* Run from `rawgit.com`: https://cdn.rawgit.com/kerrishotts/launch-storyboard-images-previewer/master/index.html
+* Run from `rawgit.com`: https://cdn.rawgit.com/kerrishotts/launch-storyboard-images-previewer/0.1-release/index.html
 
 * Clone this repo, and:
 
@@ -62,6 +62,6 @@ The device preview pane shows all supported devices in their possible orientatio
 
 ## Examples
 
-* Voice Memos: [Single image, single-color background, centered logo and text](https://cdn.rawgit.com/kerrishotts/launch-storyboard-images-previewer/master/index.html?at2x-universal-anyany=examples/material-voice-memos/Default@2x~universal~anyany.png)
-* Logology: [Single image, Two-color background, centered text](https://cdn.rawgit.com/kerrishotts/launch-storyboard-images-previewer/master/index.html?at2x-universal-anyany=examples/logology/Default@2x~universal~anyany.png)
-* Cordova Robot: [Multi image, singe-color background, centered logo and text](https://cdn.rawgit.com/kerrishotts/launch-storyboard-images-previewer/master/index.html?at2x-universal-comany=examples/cordova-robot/Default@2x~universal~comany.png&at2x-universal-comcom=examples/cordova-robot/Default@2x~universal~comcom.png&at3x-universal-anyany=examples/cordova-robot/Default@3x~universal~anyany.png&at3x-universal-comany=examples/cordova-robot/Default@3x~universal~comany.png&at3x-universal-anycom=examples/cordova-robot/Default@3x~universal~anycom.png&at2x-universal-anyany=examples/cordova-robot/Default@2x~universal~anyany.png)
+* Voice Memos: [Single image, single-color background, centered logo and text](https://cdn.rawgit.com/kerrishotts/launch-storyboard-images-previewer/0.1-release/index.html?at2x-universal-anyany=examples/material-voice-memos/Default@2x~universal~anyany.png)
+* Logology: [Single image, Two-color background, centered text](https://cdn.rawgit.com/kerrishotts/launch-storyboard-images-previewer/0.1-release/index.html?at2x-universal-anyany=examples/logology/Default@2x~universal~anyany.png)
+* Cordova Robot: [Multi image, singe-color background, centered logo and text](https://cdn.rawgit.com/kerrishotts/launch-storyboard-images-previewer/0.1-release/index.html?at2x-universal-comany=examples/cordova-robot/Default@2x~universal~comany.png&at2x-universal-comcom=examples/cordova-robot/Default@2x~universal~comcom.png&at3x-universal-anyany=examples/cordova-robot/Default@3x~universal~anyany.png&at3x-universal-comany=examples/cordova-robot/Default@3x~universal~comany.png&at3x-universal-anycom=examples/cordova-robot/Default@3x~universal~anycom.png&at2x-universal-anyany=examples/cordova-robot/Default@2x~universal~anyany.png)
