@@ -93,6 +93,7 @@
     // Build the previews grid
     ////////////////////////////////////////////////////////////////////////////
     let devices = [
+        // all size classes based on http://www.sizeclasses.com
         // iPhones
         {name:"iPhone 6+, 6s+, 7+", orientation: "Portrait",  diagonal: "5.5", resolution: [1242, 2208], size: ["com", "any"], scale: "3x", idiom: "iphone"},
         {name:"iPhone 6+, 6s+, 7+", orientation: "Landscape", diagonal: "5.5", resolution: [2208, 1242], size: ["any", "com"], scale: "3x", idiom: "iphone"},
@@ -105,30 +106,31 @@
         {name:"iPad Pro",               orientation: "Landscape", diagonal: "12.9",     resolution: [2732, 2048], size: ["any", "any"], scale: "2x", idiom: "ipad"},
         {name:"iPad Retina, Mini, Pro", orientation: "Portrait",  diagonal: "9.7, 7.9", resolution: [1536, 2048], size: ["any", "any"], scale: "2x", idiom: "ipad"},
         {name:"iPad Retina, Mini, Pro", orientation: "Landscape", diagonal: "9.7, 7.9", resolution: [2048, 1536], size: ["any", "any"], scale: "2x", idiom: "ipad"},
-        // iPad Multitasking
-        {name:"iPad Pro",               orientation: "Portrait",  diagonal: "12.9",     resolution: [2048, 2732], multitasking: 1/2.73, size: ["com", "any"], scale: "2x", idiom: "ipad"},
-        {name:"iPad Pro",               orientation: "Landscape", diagonal: "12.9",     resolution: [2732, 2048], multitasking: 1/3.64, size: ["com", "any"], scale: "2x", idiom: "ipad"},
-        {name:"iPad Pro",               orientation: "Landscape", diagonal: "12.9",     resolution: [2732, 2048], multitasking: 1/2, size: ["any", "any"], scale: "2x", idiom: "ipad"},
-        {name:"iPad Pro",               orientation: "Portrait",  diagonal: "12.9",     resolution: [2048, 2732], multitasking: 1/1.6, size: ["com", "any"], scale: "2x", idiom: "ipad"},
-        {name:"iPad Pro",               orientation: "Landscape", diagonal: "12.9",     resolution: [2732, 2048], multitasking: 1/1.39, size: ["any", "any"], scale: "2x", idiom: "ipad"},
-        {name:"iPad Retina, Mini, Pro", orientation: "Portrait",  diagonal: "9.7, 7.9", resolution: [1536, 2048], multitasking: 1/2.4, size: ["com", "any"], scale: "2x", idiom: "ipad"},
-        {name:"iPad Retina, Mini, Pro", orientation: "Landscape", diagonal: "9.7, 7.9", resolution: [2048, 1536], multitasking: 1/3.2, size: ["com", "any"], scale: "2x", idiom: "ipad"},
-        {name:"iPad Retina, Mini, Pro", orientation: "Landscape", diagonal: "9.7, 7.9", resolution: [2048, 1536], multitasking: 1/2, size: ["com", "any"], scale: "2x", idiom: "ipad"},
-        {name:"iPad Retina, Mini, Pro", orientation: "Portrait",  diagonal: "9.7, 7.9", resolution: [1536, 2048], multitasking: 1/1.75, size: ["com", "any"], scale: "2x", idiom: "ipad"},
-        {name:"iPad Retina, Mini, Pro", orientation: "Landscape", diagonal: "9.7, 7.9", resolution: [2048, 1536], multitasking: 1/1.47, size: ["any", "any"], scale: "2x", idiom: "ipad"}
+        // iPad Multitasking; based on https://medium.design/regular-and-compact-ios-display-size-breakdown-for-designers-d3ff3044e06e#.xg73rh9wx
+        {name:"iPad Pro",               orientation: "Portrait",  diagonal: "12.9",     resolution: [2048, 2732], multitasking: 750, size: ["com", "any"], scale: "2x", idiom: "ipad"},
+        {name:"iPad Pro",               orientation: "Landscape", diagonal: "12.9",     resolution: [2732, 2048], multitasking: 750, size: ["com", "any"], scale: "2x", idiom: "ipad"},
+        {name:"iPad Pro",               orientation: "Landscape", diagonal: "12.9",     resolution: [2732, 2048], multitasking: 1356, size: ["any", "any"], scale: "2x", idiom: "ipad"},
+        {name:"iPad Pro",               orientation: "Portrait",  diagonal: "12.9",     resolution: [2048, 2732], multitasking: 1278, size: ["com", "any"], scale: "2x", idiom: "ipad"},
+        {name:"iPad Pro",               orientation: "Landscape", diagonal: "12.9",     resolution: [2732, 2048], multitasking: 1962, size: ["any", "any"], scale: "2x", idiom: "ipad"},
+        {name:"iPad Retina, Mini, Pro", orientation: "Portrait",  diagonal: "9.7, 7.9", resolution: [1536, 2048], multitasking: 640, size: ["com", "any"], scale: "2x", idiom: "ipad"},
+        {name:"iPad Retina, Mini, Pro", orientation: "Landscape", diagonal: "9.7, 7.9", resolution: [2048, 1536], multitasking: 640, size: ["com", "any"], scale: "2x", idiom: "ipad"},
+        {name:"iPad Retina, Mini, Pro", orientation: "Landscape", diagonal: "9.7, 7.9", resolution: [2048, 1536], multitasking: 1014, size: ["com", "any"], scale: "2x", idiom: "ipad"},
+        {name:"iPad Retina, Mini, Pro", orientation: "Portrait",  diagonal: "9.7, 7.9", resolution: [1536, 2048], multitasking: 876, size: ["com", "any"], scale: "2x", idiom: "ipad"},
+        {name:"iPad Retina, Mini, Pro", orientation: "Landscape", diagonal: "9.7, 7.9", resolution: [2048, 1536], multitasking: 1388, size: ["any", "any"], scale: "2x", idiom: "ipad"}
     ];
     
     function buildPreviewCell(device) {
         let scaleFactor = 10;
         let w = Math.round(device.resolution[0]/scaleFactor);
         let h = Math.round(device.resolution[1]/scaleFactor); 
-        let mw = w * (device.multitasking ? device.multitasking : 1);
+        let mw = device.multitasking ? (device.multitasking/scaleFactor) : w;
+        let pw = mw / w;
         
         let el = document.createElement("div");
         el.className = "device";
        
         let imgContainer = document.createElement("div");
-        imgContainer.className = `imgContainer ${device.multitasking <= 0.5 ? "right" : (device.multitasking ? "left" : "full")}`;
+        imgContainer.className = `imgContainer ${pw <= 0.5 ? "right" : (pw < 1 ? "left" : "full")}`;
         imgContainer.style.width = `${w + 10}px`;
         imgContainer.style.height = `${h + 10}px`;
 
@@ -159,6 +161,10 @@
         let caption = document.createElement("p");
         caption.textContent = `${device.orientation} ${device.name} (${device.diagonal}, ${device.resolution[0]}x${device.resolution[1]})`;
         el.appendChild(caption);
+        
+        let secondCaption = document.createElement("p");
+        secondCaption.textContent = `@${device.scale} [ ${device.size[0]} ${device.size[1]} ] (${device.multitasking ? device.multitasking : device.resolution[0]}x${device.resolution[1]})`;
+        el.appendChild(secondCaption);
         
         return el;
     }
