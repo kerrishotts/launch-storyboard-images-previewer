@@ -59,3 +59,9 @@ The device preview pane shows all supported devices in their possible orientatio
 * iOS is supposed to select the image that best fits the device. This utility attempts to duplicate that algorithm, but it may be flawed in that it is limited by my own knowledge of how iOS does it. As such, it is possible that there are some edge cases that I haven't considered.
 
 * The coding here is incredibly naive. It makes no attempt to be optimized for any particular form factor, doesn't provide accessibility, and may not run well on your machine (lots of downscaling going on!). Ideally that will change in the future, but for now, consider this "proof of concept" quality.
+
+## Examples
+
+* Voice Memos: [Single image, single-color background, centered logo and text](https://cdn.rawgit.com/kerrishotts/launch-storyboard-images-previewer/master/index.html?at2x-universal-anyany=examples/material-voice-memos/Default@2x~universal~anyany.png)
+* Logology: [Single image, Two-color background, centered text](https://cdn.rawgit.com/kerrishotts/launch-storyboard-images-previewer/master/index.html?at2x-universal-anyany=examples/logology/Default@2x~universal~anyany.png)
+* Cordova Robot: [Multi image, singe-color background, centered logo and text](https://cdn.rawgit.com/kerrishotts/launch-storyboard-images-previewer/master/index.html?at2x-universal-comany=examples/cordova-robot/Default@2x~universal~comany.png&at2x-universal-comcom=examples/cordova-robot/Default@2x~universal~comcom.png&at3x-universal-anyany=examples/cordova-robot/Default@3x~universal~anyany.png&at3x-universal-comany=examples/cordova-robot/Default@3x~universal~comany.png&at3x-universal-anycom=examples/cordova-robot/Default@3x~universal~anycom.png)
