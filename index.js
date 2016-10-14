@@ -18,7 +18,18 @@
     };
     let sizes = ["any", "com"];
     
-    function buildCell(w, h) {
+    function extractDefaultFromSearchString(parameter) {
+        let searchString = window.location.search.substr(1);
+        let searches = searchString.split("&");
+        searches = searches.reduce((p, c) => {
+            let [key, val] = c.split("=");
+            p[key] = val;
+            return p;
+        }, {});
+        return searches[parameter];
+    }
+    
+    function buildCell(w, h, scale, idiom) {
         let el = document.createElement("div");
         let imgContainer = document.createElement("div");
         let img = document.createElement("img");
@@ -29,6 +40,12 @@
         el.className = `cell size ${w}${h}`;
         el.setAttribute("data-size", `${w} ${h}`);
         btn.textContent = "Select...";
+        
+        let defaultImg = extractDefaultFromSearchString(`at${scale}-${idiom}-${w}${h}`);
+        if (defaultImg) {
+            img.src = defaultImg;
+            el.setAttribute("data-has-image", "yes");
+        }
        
         imgContainer.appendChild(img); 
         el.appendChild(imgContainer);
@@ -37,14 +54,14 @@
         return el;
     }
     
-    function buildScaleColumn(scale) {
+    function buildScaleColumn(scale, idiom) {
         let el = document.createElement("div");
         el.className = `scale at${scale}`;
         el.setAttribute("data-scale", `@${scale}`);
         
         for (let h of sizes) {
             for (let w of sizes) {
-                el.appendChild(buildCell(w, h));
+                el.appendChild(buildCell(w, h, scale, idiom));
             }
         }
         
@@ -57,7 +74,7 @@
         el.setAttribute("data-idiom", idiom);
         
         for (let scale of scalesForIdiom[idiom]) {
-            el.appendChild(buildScaleColumn(scale));
+            el.appendChild(buildScaleColumn(scale, idiom));
         }
         
         return el;
@@ -139,7 +156,6 @@
         img.style.height = `${h}px`;
         let queryStrings = getMatchingQueryStringsInOrderOfPreference(device);
         let sourceImage = queryStrings.reduce((p, c) => {
-            console.log(c);
             let el = document.querySelector(c);
             let parentEl = document.querySelector(c.replace("com", "any"));
             if (p) {
@@ -227,6 +243,9 @@
     
     document.addEventListener("DOMContentLoaded", () => {
         buildUI();
+        if (window.location.search) {
+            window.setTimeout(() => updatePreviewsFromImages(), 250);
+        }
     });
     
 })(window, document);
