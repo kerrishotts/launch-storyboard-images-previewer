@@ -65,3 +65,11 @@ The device preview pane shows all supported devices in their possible orientatio
 * Voice Memos: [Single image, single-color background, centered logo and text](https://cdn.rawgit.com/kerrishotts/launch-storyboard-images-previewer/0.2-release/index.html?at2x-universal-anyany=examples/material-voice-memos/Default@2x~universal~anyany.png)
 * Logology: [Single image, Two-color background, centered text](https://cdn.rawgit.com/kerrishotts/launch-storyboard-images-previewer/0.2-release/index.html?at2x-universal-anyany=examples/logology/Default@2x~universal~anyany.png)
 * Cordova Robot: [Multi image, singe-color background, centered logo and text](https://cdn.rawgit.com/kerrishotts/launch-storyboard-images-previewer/0.2-release/index.html?at2x-universal-comany=examples/cordova-robot/Default@2x~universal~comany.png&at2x-universal-comcom=examples/cordova-robot/Default@2x~universal~comcom.png&at3x-universal-anyany=examples/cordova-robot/Default@3x~universal~anyany.png&at3x-universal-comany=examples/cordova-robot/Default@3x~universal~comany.png&at3x-universal-anycom=examples/cordova-robot/Default@3x~universal~anycom.png&at2x-universal-anyany=examples/cordova-robot/Default@2x~universal~anyany.png)
+
+## Attributions and Acknowledgements
+
+* Cordova Robot from http://cordova.apache.org/artwork/
+* Voice Memo uses [Google's Material Icons](https://design.google.com/icons/), and is based on the example provided by https://developers.google.com/web/updates/2015/10/splashscreen?hl=en
+* Size class information from http://www.sizeclasses.com
+* [Tyler Howarth's excellent article covering viewport sizes and size classes](https://medium.design/regular-and-compact-ios-display-size-breakdown-for-designers-d3ff3044e06e#.xg73rh9wx)
+* [File Input element and FileReader example](a href="http://stackoverflow.com/a/3814285)
