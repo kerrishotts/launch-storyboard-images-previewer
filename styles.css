@@ -11,6 +11,42 @@ body {
     margin: 0;
 }
 
+.about {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 4.5rem;
+    height: 4.5rem;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    z-index: 99;
+    border: 1px solid #383C3F;
+    border-radius: 1.5rem;
+    background-color: rgba(248, 252, 255, 0.85);
+    text-align: center;
+    line-height: 1;
+    overflow-y: scroll;
+    max-height: 75vh;
+    margin: 1rem;
+    opacity: 0.25;
+}
+.about:hover {
+    width: auto;
+    height: auto;
+    opacity: 1;
+}
+
+.about .text {
+    font-size: 1rem;
+    line-height: 1.25;
+    display: none;
+    text-align: left;
+    max-width: 25vw;
+}
+.about:hover .text {
+    display: block;
+}
+
 article {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
