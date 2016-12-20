@@ -157,7 +157,7 @@
         let queryStrings = getMatchingQueryStringsInOrderOfPreference(device);
         let sourceImage = queryStrings.reduce((p, c) => {
             let el = document.querySelector(c);
-            let parentEl = document.querySelector(c.replace("com", "any"));
+            let parentEl = document.querySelector(c.replace(/com/g, "any"));
             if (p) {
                 return p;
             } else {
